@@ -1,0 +1,85 @@
+<html>
+        <head>
+            <title>sample form</title>
+        </head>
+        <form>
+            <table>
+                <tr>
+                    <td><label>Firstname</label></td>
+                    <td><input type="text" name="fn"><br><br></td>
+                </tr>
+                <tr>
+                    <td><label>lastname</label></td>
+                    <td><input type="text" name="ln"><br><br></td>
+                </tr>
+                <tr>
+                    <td><label>Adress:</label></td>
+                    <td><textarea row="4" cols="25"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="password">password:</label></td>
+                    <td><input type="password" name="pwd"></td>
+                </tr>
+                <tr>
+                   <td><p>choose your favorite web language</p></td>
+                   <td>
+                    <input type="radio" name="fav language">
+                    <label for="html">html</label><br>
+                    <input type="radio" name="fav language">
+                    <label for="css">css</label><br>
+                    <input type="radio" name="fav language">
+                    <label for="javascript">javascript</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>email:</label></td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+               
+                    <td><label>hobbies:</label></td>
+                    <td>
+                        <input type="checkbox" name="hb1"><label>reading</label>
+                        <input type="checkbox" name="hb2"><label>writing</label>
+                        <input type="checkbox" name="hb3"><label>watching movies</label>
+                    </td>
+                    <tr>
+                        <td><label>Choose your favourite color:</label></td>
+                        <td><input type="color" name="fc"></td>
+                    </tr>
+              <tr>
+                <td><label>Date Of Birth:</label></td>
+                <td><input type="date" name="dob"></td>
+              </tr>
+              <tr>
+                <td><label for="datemax">Enter a date before 1979-12-31:</label></td>
+                <td><input type="date" id="datemax" name="datemax" max="1979-12-31 "></td>
+              </tr>
+              <tr>
+                <td><label for="datemin">Enter a date after 2000-01-01:</label></td>
+                <td><input type="date" id="datemin" name="datemin min=2000-01-01"></td>
+              </tr>
+              <tr>
+
+              </tr>
+              <tr>
+                <td>Select your country:</td>
+                <td>
+                    <select>
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>UAE</option>
+                    </select>
+                </td>
+              </tr>
+              <br>
+                <tr>
+                    <td><input type="submit" value="submit"></td>
+                    <td><input type="reset" value="reset"></td>
+
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="alret('Hello World!')"></td>
+                </tr>
+            </table>
+        </form>
+    </html>
