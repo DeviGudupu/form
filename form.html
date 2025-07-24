@@ -4,15 +4,15 @@
     <title>Sample Form</title>
 </head>
 <body>
-    <form action="/submit_form" method="post">
+    <form action="/submit_form" method="post" enctype="multipart/form-data" autocomplete="on" target="_self" novalidate>
         <table>
             <tr>
                 <td><label for="fn">Firstname:</label></td>
-                <td><input type="text" name="fn" id="fn"><br><br></td>
+                <td><input type="text" name="fn" id="fn"></td>
             </tr>
             <tr>
                 <td><label for="ln">Lastname:</label></td>
-                <td><input type="text" name="ln" id="ln"><br><br></td>
+                <td><input type="text" name="ln" id="ln"></td>
             </tr>
             <tr>
                 <td><label for="addr">Address:</label></td>
@@ -60,6 +60,14 @@
             <tr>
                 <td><label for="datemin">Enter a date after 2000-01-01:</label></td>
                 <td><input type="date" id="datemin" name="datemin" min="2000-01-01"></td>
+            </tr>
+            <tr>
+                <td><label for="today">Today's Date:</label></td>
+                <td><input type="date" name="today" id="today"></td>
+            </tr>
+            <tr>
+                <td><label for="time">Current Time:</label></td>
+                <td><input type="time" name="time" id="time"></td>
             </tr>
             <tr>
                 <td>Select your country:</td>
