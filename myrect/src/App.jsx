@@ -1,28 +1,24 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import About from './components/About'
+import Contactus from './components/Contactus'
+import Login from '/components/Login'
+import Profile from './components/Profile'
+import Register from './components/Register'
+import Sidebar from './components/Sidebar'
 import './App.css'
-
+import { BrowserRouter as Router, Routes, Route }from 'react-router-dom'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-       <div className="container">
-        <div className="heading">Header</div>
-        <div className="content">
-        <ul className='sidebar'>
-          <li>About</li>
-          <li>Dashboard</li>
-          <li>Register</li>
-          <li>Login</li>
-          <li>contact</li>
-          </ul>
-          </div>
-        <div className="footer">Footer</div>
-        
-      </div>
-    </>
+    <><Router>
+     <div className='heading'>Heading</div> 
+     <div className='content'> style={{display}}
+      
+     </div>
+     <div class="Footer">Footer</div>
+     </Router>
+         </>
   )
 }
 
