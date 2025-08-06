@@ -1,11 +1,28 @@
-#itemList{
-    list-style-type: none;
+#friuts{
+    list-style-type:none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-#itemList li{
-    display: inline;
+ li{
+    display: flex;
     padding: 10px;
-    border: 1px solid #ccc ;
-    background-color: rgb(178, 45, 45);
+    border: 10px solid #ccc;
+    background-color: aliceblue;
+    align-items: center;
+    cursor:pointer;
+   
+
+}
+li hover{
+    background-color: #dd2424;
+    border: 1px solid #ccc;
+    color:white;
+    
+
+}
+#container{
+    width: 80%;
+    margin: 0px;
+    border: 0px solid #757474;
+
 }
