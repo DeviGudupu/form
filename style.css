@@ -1,28 +1,27 @@
-#friuts{
-    list-style-type:none;
-    padding: 0;
-    margin-top: 10px;
+/* Horizontal Menu Styling */
+.menu {
+  list-style: none;   /* remove bullets */
+  display: flex;      /* display items horizontally */
+  padding: 0;
+  margin: 0;
+  background: lightblue;
 }
- li{
-    display: flex;
-    padding: 10px;
-    border: 10px solid #ccc;
-    background-color: aliceblue;
-    align-items: center;
-    cursor:pointer;
-   
 
+.menu li {
+  padding: 15px 25px; /* padding inside menu items */
 }
-li hover{
-    background-color: #dd2424;
-    border: 1px solid #ccc;
-    color:white;
-    
 
+.menu li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
-#container{
-    width: 80%;
-    margin: 0px;
-    border: 0px solid #757474;
 
+/* Box Model Styling */
+.box-model {
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid black;
+  background: lightyellow;
+  font-size: 18px;
 }

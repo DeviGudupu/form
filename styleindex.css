@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  gap: 20px; /* spacing between boxes */
+  margin-bottom: 30px; /* space below boxes */
+}
+
+.box {
+  flex: 1;
+  height: 150px;
+  background: lightblue;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.myButton {
+  background: teal;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.myButton:hover {
+  background: darkcyan;
+}
