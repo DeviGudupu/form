@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form page</title>
+</head>
+<body>
+    
+    <form id="regform" onsubmit="return display()">
+
+        Name: <input type="text" id="cname"><span id="nameerror" style="color: red;"></span><br><br>
+        education:<input type="text" id="education"><br><br>
+
+           <button id="Submit" type="button">Submit</button>
+
+    </form>
+    <div>
+        Your Name is entered as <span id="spanname"></span>and my education qualifications is<span id="spaneducation"></span>
+    </div>
+    <script>
+        const myform =document.getElementById('regform');
+        myform.addEventListener('Submit',function(event);{
+            var varname = document.getElementById('cname').value;
+            var vared = document.getElementById('education').value;
+            document.getElementById('spaneducation').textContent =cname;
+            document.getElementById('spanname').textContent=education;
+            return false;
+        };
+        
+    </script>
+</body>
+</html>
