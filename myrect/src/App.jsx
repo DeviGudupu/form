@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import About from './components/About'
 import Contactus from './components/Contactus'
-import Login from '/components/Login'
+import Login from './components/Login'
 import Profile from './components/Profile'
 import Register from './components/Register'
-import Sidebar from './components/Sidebar'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route }from 'react-router-dom'
 function App() {
@@ -13,8 +12,15 @@ function App() {
   return (
     <><Router>
      <div className='heading'>Heading</div> 
-     <div className='content'> style={{display}}
-      
+     <div className='content'> style={{display: "flex"}}
+      <Sidebar />
+      <Routes>
+        <Route path="/" element={<About/>}/>
+        <Route path="/" element={<Contactus/>}/>
+        <Route path="/" element={<Login/>}/>
+        <Route path="/" element={<Profile/>}/>
+        <Route path="/" element={<Register/>}/>
+      </Routes>
      </div>
      <div class="Footer">Footer</div>
      </Router>
