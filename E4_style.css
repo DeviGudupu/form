@@ -1,0 +1,15 @@
+.dropdown li{
+    position: relative;
+    list-style: none;
+}
+.submenu{
+    display: none;
+    position: absolute;
+    background: #cb3f5d;
+}
+.dropdown li:hover .submenu{
+    display: block;
+}
+.mainmenu{
+    padding: 20px;
+}
