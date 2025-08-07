@@ -8,7 +8,7 @@
     background: #cb3f5d;
 }
 .dropdown li:hover .submenu{
-    display: block;
+    display:list-item;
 }
 .mainmenu{
     padding: 20px;
