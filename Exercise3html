@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Flexbox Layout</title>
+  <link rel="stylesheet" href="Ex_style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>Sidebar</h2>
+      <p>This is the sidebar content.</p>
+    </div>
+
+    <div class="main-content">
+      <h1>Main Content</h1>
+      <p>This is the main content area.</p>
+    </div>
+  </div>
+
+</body>
+</html>
