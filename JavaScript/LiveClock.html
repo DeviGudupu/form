@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
     <body>
-    <h2>Current Time</h2>
-    <p id="time"></p>
-    <script>
-        function updateTime(){
-            let now=new Date();
-            document.getElementById("time").innerHTML = nowtoLocalTimeString();
-        }
-        setInterval(updateTime,1000);
-        updateTime();
-    </script>    
+        <h1>Current time and date</h1>
+        <p id="time"></p>
+        <p id="date"></p>
+        <script>
+            function updateTime(){
+                let now=new Date();
+                document.getElementById("time").innerHTML=now.toLocaleTimeString();
+                document.getElementById("date").innerHTML=now.toLocaleDateString();
+            }
+            setInterval(updateTime,1000);
+
+            updateTime();
+        </script>
     </body>
 </html>
