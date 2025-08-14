@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>grid example</title>
+        <style>
+            .container{
+                display: grid;
+                grid-template-rows: repeat(10,1fr);
+                grid-template-columns: repeat(7,1fr);
+                gap: 10px;
+            }
+            .one{
+                grid-column: 1/5;
+                grid-row: 1/2;
+                background-color:chocolate;
+                text-align: center;
+            }
+            .two{
+                grid-column: 1/2;
+                grid-row: 2/10;
+                background-color: blue;
+                text-align: center;
+            }
+            .three{
+                grid-column: 2/3;
+                grid-row: 2/10;
+                background-color:cadetblue;
+                text-align: center;
+            }
+            .four{
+                grid-column:3/4 ;
+                grid-row:2/3 ;
+                background-color:cornflowerblue;
+                text-align: center;
+            }
+            .five{
+                grid-column: 3/4;
+                grid-row: 3/10;
+                background-color:crimson;
+                text-align: center;
+            }
+            .six{
+                grid-column: 4/5;
+                grid-row: 2/10;
+                background-color:deeppink;
+                text-align: center;
+            }
+            .seven{
+                grid-column: 1/5;
+                grid-row: 10/11;
+                background-color:lightcoral;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+             <div class="six">6</div>
+              <div class="seven">7</div>              
+
+        </div>
+    </body>
+</html>

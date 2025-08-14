@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <h2>Current Time</h2>
+    <p id="time"></p>
+    <script>
+        function updateTime(){
+            let now=new Date();
+            document.getElementById("time").innerHTML = nowtoLocalTimeString();
+        }
+        setInterval(updateTime,1000);
+        updateTime();
+    </script>    
+    </body>
+</html>
