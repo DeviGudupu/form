@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Current time and date</h1>
+        <button id="datebtn" onclick="showdate()">Show Date</button><br><br>
+        <button id="timebtn" onclick="showtime()">Show Time</button><br><br>
+        <p id="time"></p>
+        <p id="date"></p>
+        <script>
+            function showdate(){
+                let now=new Date();
+                document.getElementById("date").innerHTML="current Date"+now.toDateString();
+            }
+            function showtime(){
+                let nowt=new Date();
+                document.getElementById("time").innerHTML="current Time"+nowt.toLocaleTimeString();
+
+            }
+            setInterval(updateTime,1000);
+
+            updateTime();
+        </script>
+    </body>
+</html>
