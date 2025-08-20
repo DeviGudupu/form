@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Simple Calculator</title>
+    </head>
+    <body>
+        <h2>Simple Calculator</h2>
+        Result:<span id="result"></span><br><br>
+        <input type="number" id="num1" placeholder="Enter first number"><br><br>
+        <input type="number" id="num2" placeholder="Enter second number"><br><br>
+        <button id="addBtn" onclick="calculate('+')">+</button>&nbsp;&nbsp;
+        <button id="subBtn" onclick="calculate('-')">-</button><br></br>
+        <button id="mulBtn" onclick="calculate('*')">X</button>&nbsp;&nbsp;
+        <button id="divBtn" onclick="calculate('/')">/</button><br><br>
+        <script>
+            function calculate(operation){
+                let n1= parseFloat(document.getElementById("num1").value);
+                let n2= parseFloat(document.getElementById("num2").value);
+                let result;
+                if(isNaN(n1)||isNaN(n2)){
+                    document.getElementById("result").innerHTML="please enter "
+                    return;
+                }
+                switch (operation){
+                    case '+':
+                        
+                }
+            }
+        </script>
+    </body>
+</html>
