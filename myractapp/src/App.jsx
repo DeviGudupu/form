@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      hink
+      
       <h1>Hehe react app</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
