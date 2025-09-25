@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AgriConnect — Prototype</title>
+  <style>
+    :root{
+      --accent:#2f9e44;
+      --muted:#666;
+      --card:#fff;
+      --bg:#f5f7fb;
+      --glass: rgba(255,255,255,0.7);
+      font-family: Inter, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111}
+    header{
+      background:linear-gradient(90deg,#0b6b3b20,#2f9e4422);
+      padding:18px 20px; display:flex; align-items:center; justify-content:space-between;
+      position:sticky; top:0; backdrop-filter: blur(6px);
+    }
+    header h1{margin:0;font-size:18px;color:#0b6b3b}
+    .roles{display:flex; gap:8px}
+    .role-btn{padding:8px 12px;border-radius:8px;border:1px solid #d6e8d5;background:#fff;cursor:pointer}
+    .container{max-width:1000px;margin:24px auto;padding:0 16px}
+    .hero{
+      background:var(--card); padding:18px; border-radius:12px; display:flex; gap:16px; align-items:center; box-shadow:0 6px 18px rgba(20,20,20,0.05);
+    }
+    .hero .left{flex:1}
+    .hero h2{margin:0 0 8px 0}
+    .hero p{margin:0;color:var(--muted)}
+    .search{
+      margin-top:12px; display:flex; gap:8px;
+    }
+    input[type="search"]{flex:1;padding:10px;border-radius:10px;border:1px solid #e0e6ea}
+    button.primary{background:var(--accent); color:#fff;border:none;padding:10px 14px;border-radius:10px;cursor:pointer}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:18px}
+    .card{background:var(--card); padding:14px;border-radius:10px; box-shadow:0 4px 10px rgba(18,18,18,0.04); cursor:pointer}
+    .card h3{margin:0 0 8px 0;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+    footer{max-width:1000px;margin:28px auto;padding:18px;background:var(--card);border-radius:10px;color:var(--muted);text-align:center}
+    /* Dashboard panels */
+    .panel{display:none; margin-top:18px}
+    .panel.active{display:block}
+    .panel .row{display:flex; gap:12px;flex-wrap:wrap}
+    .panel .panel-card{flex:1; min-width:220px; padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfffb);box-shadow:0 6px 18px rgba(40,40,40,0.03)}
+    small{color:var(--muted)}
+    /* simple responsive */
+    @media (max-width:560px){header h1{font-size:16px}.hero{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AgriConnect — Inspire farming & help farmers</h1>
+    <div class="roles">
+      <button class="role-btn" data-role="public">Public</button>
+      <button class="role-btn" data-role="farmer">Farmer</button>
+      <button class="role-btn" data-role="expert">Expert</button>
+      <button class="role-btn" data-role="admin">Admin</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <div class="left">
+        <h2>Build awareness. Connect farmers with help & markets.</h2>
+        <p>Prototype demo: explore resources, get expert guidance, share initiatives, and manage content as an admin.</p>
+        <div class="search">
+          <input type="search" id="q" placeholder="Search guides, crops, initiatives..." />
+          <button class="primary" id="searchBtn">Search</button>
+        </div>
+      </div>
+      <div style="width:220px">
+        <img 
+          src="https://media.istockphoto.com/id/1465642013/photo/a-vibrant-green-soybean-field-nestled-in-a-natural-setting.jpg?s=1024x1024&w=is&k=20&c=iiVvAmlMLznJkCVdb5z0SjkvtwHAcu6MPjJ_dxq1VCM=" 
+          alt="Soybean field"
+          style="width:100%;height:100px;border-radius:10px;object-fit:cover;display:block">
+      </div>
+    </div>
+
+    <!-- Home cards -->
+    <div class="grid" id="homeGrid">
+      <div class="card" data-open="resources">
+        <h3>Farming Resources</h3>
+        <p>Guides, best practices, crop calendars, weather tips and videos for small farmers.</p>
+      </div>
+      <div class="card" data-open="connect">
+        <h3>Connect with Experts</h3>
+        <p>Ask agricultural experts, join Q&A sessions and local initiatives.</p>
+      </div>
+      <div class="card" data-open="market">
+        <h3>Marketplace</h3>
+        <p>Find buyers, list produce, and discover fair pricing & procurement options.</p>
+      </div>
+      <div class="card" data-open="initiatives">
+        <h3>Community Initiatives</h3>
+        <p>Tree-planting, green innovation projects, awareness campaigns and events.</p>
+      </div>
+    </div>
+
+    <!-- Panels for different roles -->
+    <div id="panelPublic" class="panel active">
+      <h3>Public: Learn & Engage</h3>
+      <div class="row">
+        <div class="panel-card">
+          <h4>Featured Article</h4>
+          <small>How small changes improve soil health</small>
+          <p style="margin-top:8px">Simple techniques: mulching, composting, and water conservation.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Events</h4>
+          <small>Local tree plantation — Sat, 10 AM</small>
+          <p style="margin-top:8px">Join volunteer drives, awareness sessions and donate seeds.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Videos</h4>
+          <small>Water-saving irrigation</small>
+          <p style="margin-top:8px">Watch 3-min demo video on drip irrigation benefits.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="panelFarmer" class="panel">
+      <h3>Farmer Dashboard</h3>
+      <div class="row">
+        <div class="panel-card">
+          <h4>My Crops</h4>
+          <small>12 fields registered</small>
+          <p style="margin-top:8px">Crop suggestions, pest alerts, expected yield estimates.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Connect to Services</h4>
+          <small>Loan, Insurance, Market link</small>
+          <p style="margin-top:8px">Quick links to subsidies, e-market, and extension services.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Weather Alerts</h4>
+          <small>Next 7 days forecast</small>
+          <p style="margin-top:8px">Rain predicted Thu-Fri, irrigation planning advised.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="panelExpert" class="panel">
+      <h3>Agricultural Expert</h3>
+      <div class="row">
+        <div class="panel-card">
+          <h4>Create Content</h4>
+          <small>Upload guides or record a short video</small>
+          <p style="margin-top:8px">Share best practices and seasonal tips.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Schedule Q&A</h4>
+          <small>Host weekly sessions</small>
+          <p style="margin-top:8px">Answer farmer queries and collaborate with local NGOs.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Recent Uploads</h4>
+          <small>Soil testing guide (PDF)</small>
+          <p style="margin-top:8px">Uploaded on 23 Sep • 120 downloads</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="panelAdmin" class="panel">
+      <h3>Admin Panel</h3>
+      <div class="row">
+        <div class="panel-card">
+          <h4>Manage Users</h4>
+          <small>Approve experts, verify farmers</small>
+          <p style="margin-top:8px">5 new expert requests pending</p>
+        </div>
+        <div class="panel-card">
+          <h4>Moderate Content</h4>
+          <small>Ensure data accuracy and remove spam</small>
+          <p style="margin-top:8px">2 flagged posts awaiting review</p>
+        </div>
+        <div class="panel-card">
+          <h4>Reports</h4>
+          <small>System usage</small>
+          <p style="margin-top:8px">1200 monthly active users</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extra Sections -->
+    <div id="resources" class="panel">
+      <h3>Farming Resources</h3>
+      <div class="row">
+        <div class="panel-card">
+          <h4>Crop Guide: Rice</h4>
+          <small>Best sowing months</small>
+          <p>June–July recommended with irrigation practices.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Organic Fertilizer</h4>
+          <small>Low-cost composting</small>
+          <p>Use kitchen waste, cow dung for natural soil boosters.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Video</h4>
+          <small>Pest management in cotton</small>
+          <p>2 min tutorial with safe pesticide alternatives.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="market" class="panel">
+      <h3>Marketplace</h3>
+      <div class="row">
+        <div class="panel-card">
+          <h4>Farmer Listing</h4>
+          <small>Tomatoes, 500 kg</small>
+          <p>Available from Vijayawada • ₹18/kg expected.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Buyer Request</h4>
+          <small>Wheat, bulk order</small>
+          <p>Buyer from Hyderabad • 5 tons required.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Market Price Update</h4>
+          <small>Maize</small>
+          <p>₹22/kg (up 5% from last week).</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="initiatives" class="panel">
+      <h3>Community Initiatives</h3>
+      <div class="row">
+        <div class="panel-card">
+          <h4>Tree Plantation Drive</h4>
+          <small>Sat, 28 Sep • Local school ground</small>
+          <p>Volunteers needed • Target: 500 saplings.</p>
+        </div>
+        <div class="panel-card">
+          <h4>Awareness Workshop</h4>
+          <small>Water conservation</small>
+          <p>Hosted by NGO • Free entry • 10 Oct</p>
+        </div>
+        <div class="panel-card">
+          <h4>Green Innovation</h4>
+          <small>Solar pumps project</small>
+          <p>Subsidy-based adoption • Apply before 15 Oct</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Prototype built for Review 1 • AgriConnect — platform to inspire society about farming & help farmers benefit.
+    </footer>
+  </div>
+
+  <script>
+    // Role buttons show panels
+    document.querySelectorAll('.role-btn').forEach(btn=>{
+      btn.addEventListener('click',()=> {
+        const role = btn.dataset.role;
+        document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+        if(role==='public') document.getElementById('panelPublic').classList.add('active');
+        if(role==='farmer') document.getElementById('panelFarmer').classList.add('active');
+        if(role==='expert') document.getElementById('panelExpert').classList.add('active');
+        if(role==='admin') document.getElementById('panelAdmin').classList.add('active');
+      });
+    });
+
+    // card click open demo navigation
+    document.querySelectorAll('.card').forEach(c=>{
+      c.addEventListener('click',()=> {
+        const openId = c.dataset.open;
+        if(openId){
+          document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+          document.getElementById(openId).classList.add('active');
+        } else {
+          alert('Demo navigation: This card would open the detailed section in the real app.\nCard: '+c.querySelector('h3').innerText);
+        }
+      });
+    });
+
+    // search demo
+    document.getElementById('searchBtn').addEventListener('click',()=>{
+      const q = document.getElementById('q').value.trim().toLowerCase();
+      if(!q) { alert('Type something to search (try: compost)'); return; }
+      let results = [];
+      document.querySelectorAll('.panel-card').forEach(card=>{
+        if(card.innerText.toLowerCase().includes(q)){
+          results.push(card.innerHTML);
+        }
+      });
+      if(results.length){
+        let popup = window.open("","Search Results","width=600,height=400,scrollbars=yes");
+        popup.document.write("<h2>Search Results for '"+q+"'</h2>");
+        results.forEach(r=>popup.document.write("<div style='border:1px solid #ddd;padding:8px;margin:6px;border-radius:8px'>"+r+"</div>"));
+      } else {
+        alert('No results found for "'+q+'"');
+      }
+    });
+  </script>
+</body>
+</html>
